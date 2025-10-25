@@ -38,12 +38,15 @@ public class Pig {
             if("aeiou".indexOf(firstLetter) != -1) {
                 //if so (vowel), keep it the same
                 result.append(word);
-            
+            // move the first letter to the end and add y
             } else {
                 String converted = word.substring(1) + firstLetter + "ay";
                 result.append(converted);
             }
-            result
+                result.append(" ");
+
+            }
+          return result.toString().trim();  
 
         }
 
