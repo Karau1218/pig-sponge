@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Pig {
 
     /*
@@ -27,6 +29,10 @@ public class Pig {
     // Implement your solution here!
     public static String pigLatin(String sentence) {
         return null;
+        ArrayList<String> myStringList = new ArrayList<>();
+
+        str = [];
+        toLowerCase();
     }
 
 
