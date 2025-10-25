@@ -1,4 +1,4 @@
-import java.io.StreamCorruptedException;
+
 
 public class Pig {
 
@@ -32,28 +32,33 @@ public class Pig {
         String[] words = sentence.split(" ");
         StringBuilder result = new StringBuilder();
 
+        //This is for looping through each word
+        for (String word : words) { 
         //check if the word starts w a vowel (aeiou)
-        for (String word : words) {
+
             char firstLetter = word.charAt(0);
+
             if("aeiou".indexOf(firstLetter) != -1) {
                 //if so (vowel), keep it the same
                 result.append(word);
-            // move the first letter to the end and add y
+            // move the first letter to the end and add ay
             } else {
                 String converted = word.substring(1) + firstLetter + "ay";
                 result.append(converted);
             }
-                result.append(" ");
-
+            // append " " is for adding a space between the words
+                result.append(" "); 
+ 
             }
+            // trim the extra space
           return result.toString().trim();  
 
         }
 
 
 
-        }
-    }
+        
+    
 
 
 
