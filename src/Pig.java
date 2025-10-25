@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+import java.io.StreamCorruptedException;
 
 public class Pig {
 
@@ -28,11 +28,28 @@ public class Pig {
 
     // Implement your solution here!
     public static String pigLatin(String sentence) {
-        return null;
-        ArrayList<String> myStringList = new ArrayList<>();
+        //splitting the sentence into words
+        String[] words = sentence.split(" ");
+        StringBuilder result = new StringBuilder();
 
-        str = [];
-        toLowerCase();
+        //check if the word starts w a vowel (aeiou)
+        for (String word : words) {
+            char firstLetter = word.charAt(0);
+            if("aeiou".indexOf(firstLetter) != -1) {
+                //if so (vowel), keep it the same
+                result.append(word);
+            
+            } else {
+                String converted = word.substring(1) + firstLetter + "ay";
+                result.append(converted);
+            }
+            result
+
+        }
+
+
+
+        }
     }
 
 
