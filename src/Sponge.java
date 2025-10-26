@@ -32,28 +32,37 @@ public class Sponge {
   }
 
   // Implement your solution here!
-  public static String spongeCase(String sentence) {
-
-    //this is for splitting
-       String[] words = sentence.split(" ");
-
-    //this is for the new string after splitting
+public static String spongeCase(String sentence) {
+   // split the sentence into separate words
+    String[] words = sentence.split(" ");
+  // this is for storing the final result of the new spongeCase
     StringBuilder result = new StringBuilder();
 
-
-    //for looping in the words
+    // for looping through each individual word from the string words array
     for (String word : words) {
-      StringBuilder newWord = new StringBuilder();
-      boolean toUpper = false;
-
-      for ( int i = 0; i < word.length(); i++) {
-        char c = word.charAt(i);
-        if (toUpper) {
-          newWord.append(Character.toUpperCase(c)); }
-            else {
-          newWord.append(Character.toLowerCase(c)); 
-       
-  
+      // this stores the spongecase version of the single words
+        StringBuilder newWord = new StringBuilder();
+        //makes sure the letters are lowercase
+        boolean toUpper = false;
+      //looping through each character
+        for (int i = 0; i < word.length(); i++) {
+            char c = word.charAt(i);
+          //makes ro upper upper or lowercase
+            if (toUpper) {
+                newWord.append(Character.toUpperCase(c));
+            } else {
+                newWord.append(Character.toLowerCase(c));
+            }
+            // flips the values of the toupper --> false becomes true then vise versa
+            toUpper = !toUpper;
+        }
+          // adds space to the new word
+        result.append(newWord).append(" ");
+    }
+        // makes stringbuilder a regualr string and 
+        // takes off extra space
+    return result.toString().trim();
+}
 
 
   // Method to help with testing, you do not need to read this.
