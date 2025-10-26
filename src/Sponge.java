@@ -33,8 +33,27 @@ public class Sponge {
 
   // Implement your solution here!
   public static String spongeCase(String sentence) {
-    return null;
-  }
+
+    //this is for splitting
+       String[] words = sentence.split(" ");
+
+    //this is for the new string after splitting
+    StringBuilder result = new StringBuilder();
+
+
+    //for looping in the words
+    for (String word : words) {
+      StringBuilder newWord = new StringBuilder();
+      boolean toUpper = false;
+
+      for ( int i = 0; i < word.length(); i++) {
+        char c = word.charAt(i);
+        if (toUpper) {
+          newWord.append(Character.toUpperCase(c)); }
+            else {
+          newWord.append(Character.toLowerCase(c)); 
+       
+  
 
 
   // Method to help with testing, you do not need to read this.
